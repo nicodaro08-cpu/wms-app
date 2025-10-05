@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>WMS Optimizador</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>📦 WMS Optimizador de Rutas</header>
+  <div class="container">
+    <nav class="tabs">
+      <button class="tab active" data-page="inicio">Inicio</button>
+      <button class="tab" data-page="plano">Plano</button>
+      <button class="tab" data-page="optimizar">Optimizar</button>
+      <button class="tab" data-page="resultados">Resultados</button>
+    </nav>
+
+    <section id="inicio" class="page active">
+      <h2>Cargar Datos</h2>
+      <input type="file" id="fileInput" multiple />
+      <button onclick="cargarEjemplo()">Usar Datos de Ejemplo</button>
+      <div id="status"></div>
+    </section>
+
+    <section id="plano" class="page">
+      <h2>Plano del Depósito</h2>
+      <svg id="mapa" viewBox="0 0 800 500"></svg>
+    </section>
+
+    <section id="optimizar" class="page">
+      <h2>Optimización</h2>
+      <button onclick="optimizar()">Optimizar Recorrido</button>
+    </section>
+
+    <section id="resultados" class="page">
+      <h2>Resultados</h2>
+      <div id="resumen"></div>
+    </section>
+  </div>
+  <div id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
